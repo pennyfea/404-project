@@ -199,7 +199,7 @@ def posts_detail(request, id):
                     break
             except:
                 success = json.loads(r.content)
-                if type(success) == 'string':
+                if isinstance(success, str):
                     print(success)
                     break
         #change this to go back to post detail?

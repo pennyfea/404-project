@@ -181,8 +181,9 @@ class CommentSerializer(serializers.ModelSerializer):
             found = False
             for node in Node.objects.all():
                 url = node.host + "/service/author/" + str(obj.user)
+                print("The url is: " + url)
                 r = requests.get(url, auth=HTTPBasicAuth(node.username, node.password))
-                print("the response is: " + str(r))
+                #print("the response is: " + str(r))
                 if (r.status_code == 200):
                     try:
                         json = r.json()
