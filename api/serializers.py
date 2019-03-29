@@ -189,10 +189,15 @@ class CommentSerializer(serializers.ModelSerializer):
                         json = r.json()
                         print("the json in serializers.py is: " + str(json))
                         username = json['displayName']
+                        print("username is: " + str(username))
                         github = json['github']
+                        print("github is: " + str(github))
                         host = json['host']
+                        print("host is: " + str(host))
                         url = json['url']
+                        print("url is: " + str(url))
                         id = json['id']
+                        print("id is: " + str(id))
                         author = User(host=host, id=id, github=github, url=url, username=username)
                         found = True
                         break
