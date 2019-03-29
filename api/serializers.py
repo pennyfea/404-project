@@ -185,6 +185,7 @@ class CommentSerializer(serializers.ModelSerializer):
                 if (r.status_code == 200):
                     try:
                         json = r.json()
+                        print("the json in serializers.py is: " + str(json))
                         username = json['displayName']
                         github = json['github']
                         host = json['host']
